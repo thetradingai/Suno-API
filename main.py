@@ -9,8 +9,10 @@ import schemas
 from deps import get_token
 from utils import generate_lyrics, generate_music, get_feed, get_lyrics, get_credits
 
-app = FastAPI()
-
+app = FastAPI(
+    redoc_url="/docs",
+    docs_url="/playground",
+)
 
 app.add_middleware(
     CORSMiddleware,
